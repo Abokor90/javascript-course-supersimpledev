@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes can contain properties and methods</title>
+</head>
+<body>
+  
+
+  <script>
+    // class Product {
+    //   constructor(name, price) {
+    //     this.name = name;
+    //     this.price = price;
+    //   }
+
+    //   displayProduct() {
+    //     console.log(`${this.name}: ${this.price}`);
+    //   }
+    // }
+
+    // // create an object (an instanceof the class) then call the method on that object
+    // const product1 = new product('Laptop', 5000);
+    // product1.displayProduct();
+
+
+    class ElectricityBill {
+      constructor(customerName, units) {
+        this.customerName =  customerName;
+        this.units = units;
+
+      }
+
+      calculateTotalBill() {
+        if (this.units <= 100) {
+          return 1.5 * this.units;
+        } else if (this.units <= 200) {
+          return (100 * 1.5) + ((this.units - 100) * 2);
+        } else {
+          return (100 * 1.5) + (100 * 2) + ((this.units - 200) * 3);
+        }
+      }
+    }
+
+    const customer1 = new ElectricityBill('John Doe', 400);
+    console.log(customer1.calculateTotalBill());
+
+  </script>
+</body>
+</html>

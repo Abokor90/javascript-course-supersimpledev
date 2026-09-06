@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+</head>
+<body>
+  <p class="js-quotes">Keep learning</p>
+  <button class="js-button" onclick="
+    quotesButton();
+  ">New quotes</button>
+
+  <script>
+    const quotes = document.querySelector('.js-quotes');
+    const buttonElemnt = document.querySelector('.js-button');
+
+     // STYLING
+    //  Button
+    buttonElemnt.style.backgroundColor = '#212529'; 
+    buttonElemnt.style.color = 'white'
+    buttonElemnt.style.padding = '10px 30px';
+    buttonElemnt.style.margin = '10px auto';
+    buttonElemnt.style.borderRadius = '9px';
+    buttonElemnt.style.fontSize = '17px';
+    buttonElemnt.style.fontWeight = 'bold';
+    buttonElemnt.style.cursor = 'pointer';
+
+    // paragraph
+    quotes.style.margin = '20px 30px';
+    quotes.style.fontSize = '20px'
+
+    function quotesButton() {
+      if (quotes.innerText === 'Keep learning') {
+        quotes.innerText = 'You still have a lot to cover'
+      } else if (quotes.innerText === 'You still have a lot to cover') {
+        quotes.innerText = 'You have finished half of js';
+      } else {
+        quotes.innerText = 'You have to finish js for you to move to the next';
+      }
+     }
+  </script>
+</body>
+</html>

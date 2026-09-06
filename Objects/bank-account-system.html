@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const account = {
+      owner: 'John',
+      balance: 100,
+
+      deposit(amount) {
+        // amount =  150;
+        this.balance +=  amount;
+        return this.balance;
+      },
+
+      withdraw(amount) {
+        if (amount > this.balance) {
+          return 'Insufficient funds';
+        } else {
+          this.balance -= amount;
+          return this.balance;
+        }
+      },
+
+      checkBalance() {
+        return this.balance
+      }, 
+
+      resetAccount() {
+        this.balance = 100;
+        return this.balance;
+      }
+    };
+
+    console.log(account.deposit(50));
+    console.log(account.withdraw(200));
+    console.log(account.checkBalance());
+    console.log(account.resetAccount());
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 11r
+    function removeEgg(array) {
+      const result = [];
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'egg') {
+          continue;
+        } else {
+          result.push(array[i]);
+        }
+      }
+      return result;
+    }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    // 12s
+    function removeFirstTwoEggs() {
+      const result = [];
+      let eggsRemoved = 0;
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          continue;
+        }
+        result.push(array[i]);
+      }
+    }
+    console.log(removeFirstTwoEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    // 11t
+    function removeLastTwoEggs() {
+      const reversedArray = array.slice().reverse();
+      let result = [];
+      let eggsRemoved = 0;
+
+      for (let i = 0; i < reversedArray.length; i++) {
+        if (reversedArray[i] === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          continue;
+        }
+        result.push(reversedArray[i]);
+      }
+      return result.reverse();
+    }
+
+    array.reverse(3, 2);
+    console.log(removeLastTwoEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let user = {
+      name: 'John'
+    }
+
+    // STORAGE
+
+    // localStorage - stores data permanently untill you delete, data stays after refresh or closing the browser
+    localStorage.setItem('name', 'John');   // stores the value John in the name
+    localStorage.getItem('name');   // retrieves the name from the storage
+    localStorage.removeItem('name');
+
+    // sessionStorage - stores data temporarily, data is deleted when you close the tab
+    sessionStorage.setItem('name', 'John');
+    sessionStorage.getItem('name');
+
+    // 
+
+    
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <button onclick="
+    showQuantity();
+    console.log(`cart quantity: ${cartQuantity}`);
+   ">Show Quantity</button>
+  <button onclick="
+    // cartQuantity += 1;
+    addToCart();
+    console.log(`cart quantity: ${cartQuantity}`);
+  ">Add to cart</button>
+
+  <button onclick="
+    addToTwo()
+    console.log(`cart quantity: ${cartQuantity}`);
+  ">+2</button>
+
+  <button onclick="
+    addToThree();
+    console.log(`Cart quantity: ${cartQuantity}`);
+    ">+3</button>
+
+    <button onclick="
+     addToFour();
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">+4</button>
+
+    <button onclick="
+     addToFive();
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">+5</button>
+
+    <button onclick="
+     removeFromCart();     
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">Remove from cart</button>
+
+    <button onclick="
+     removeTwo();
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">-2</button>
+
+    <button onclick="
+     removeThree();
+     console.log(`Cart quantity: ${cartQuantity}`); 
+    ">-3</button>
+
+  <button onclick="
+    resetCart();
+    console.log('Cart was reset.');
+    console.log(`Cart quantity: ${cartQuantity}`);
+  ">Reset cart</button>
+
+  <p>Cart quantity:
+    <span  class="js-cart-quantity">0</span>
+  </p>
+
+  <script>
+    let cartQuantity = 0;
+
+    const quantity = document.querySelector('.js-cart-quantity');
+
+    function showQuantity() {
+      quantity.innerText = cartQuantity;
+    }
+
+    function addToCart () {
+      cartQuantity += 1;
+      showQuantity();
+    }
+
+    function addToTwo () {
+      cartQuantity += 2;
+      showQuantity();
+    }
+
+    function addToThree () {
+      cartQuantity += 3;
+      showQuantity();
+    }
+
+    function addToFour () {
+      cartQuantity += 4;
+      showQuantity();
+    }
+
+    function addToFive () {
+      cartQuantity += 5;
+      showQuantity();
+    }
+
+    function removeFromCart () {
+      cartQuantity -= 1;
+      showQuantity();
+    }
+
+    function removeTwo () {
+      cartQuantity -= 2;
+      showQuantity();
+    }
+
+    function removeThree () {
+      cartQuantity -= 3;
+      showQuantity();
+    }
+
+    function resetCart () {
+      cartQuantity = 0;
+      showQuantity();
+    }
+
+    showQuantity();
+
+    // function quantityValue () {
+    //   quantity.innerText = `${cartQuantity}`;
+    // }
+
+  </script>
+</body>
+</html>

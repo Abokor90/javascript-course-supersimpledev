@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <style>
+
+    body {
+      background-color: black;
+      font-family: Arial;
+    }
+
+    p { 
+      margin: 0;
+    }
+
+    .main-container {
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; */
+      width: 300px;
+      height: 440px;
+      margin: 50px auto;
+      /* border-radius: 10px; */
+    }
+
+    .calc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 4px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      background-color: rbg(51, 51, 51);
+      color: black;
+      cursor: pointer;
+    }
+
+    .operator {
+      background-color: orange;
+      color: white;
+    }
+
+    .js-result {
+      /* padding: 20px; */
+      /* margin-top: 25px; */
+      color: white;
+      /* border-radius: 5px; */
+      font-size: 45px;
+      /* font-weight: bold; */
+    }
+
+    .bottom {
+      background-color: white;
+      color: black;
+      padding: 5px;
+    }
+
+  
+  </style> 
+</head>
+<body>
+  <div class="main-container">
+    <p class="js-result"></p>
+
+    <p class="calc">
+      <button onclick="
+        updateCalculator('1');
+        // calculation += '1';
+        // console.log(calculation);
+        ">1</button>
+
+      <button onclick="
+        updateCalculator('2');
+      // calculation += '2';
+      // console.log(calculation);
+      ">2</button>
+
+      <button onclick="
+      updateCalculator('3');
+      // calculation += '3';
+      console.log(calculation);
+      ">3</button>
+
+      <button class="operator" onclick="
+      updateCalculator('+')
+      // calculation += ' + ';
+      // console.log(calculation);
+      ">+</button>
+    </p>
+
+    <p class="calc">
+      <button onclick="
+        updateCalculator('4');
+        // calculation += '4';
+        // console.log(calculation);
+      ">4</button>
+
+      <button onclick="
+        updateCalculator('5');
+        // calculation += '5';
+        // console.log(calculation);
+      ">5</button>
+
+      <button onclick="
+        updateCalculator('6');
+        // calculation += '6';
+        // console.log(calculation);
+      ">6</button>
+
+      <button class="operator" onclick="
+        updateCalculator('-')
+      // calculation += ' - ';
+      // console.log(calculation);
+      ">-</button>
+    </p>
+
+    <p class="calc">
+      <button onclick="
+        updateCalculator('7');
+        // calculation += '7';
+        // console.log(calculation);
+        ">7</button>
+
+      <button onclick="
+        updateCalculator('8');
+        // calculation += '8';
+        // console.log(calculation);
+      ">8</button>
+
+      <button onclick="
+        updateCalculator('9');
+        // calculation += '9';
+        // console.log(calculation);
+      ">9</button>
+
+      <button class="operator" onclick="
+        updateCalculator('*');
+        // calculation += ' * '
+        // console.log(calculation);
+      ">*</button>
+    </p>
+
+    <p class="calc">
+      <button onclick="
+        updateCalculator('0');
+        // console.log(calculation);
+        ">0</button>
+
+      <button onclick="
+        updateCalculator('.');
+        // calculation += '.'
+        // console.log(calculation);
+      ">.</button>
+
+      <button class="operator" onclick="
+        calculation = eval(calculation);
+        displayCalculation();
+        // console.log(calculation);
+      ">=</button>
+
+      <button class="operator" onclick="
+        updateCalculator(' / ');
+        // calculation += ' / ';
+        // console.log(calculation);
+      ">/</button>
+    </p>
+
+    <p class="calc">
+      <button class="bottom" onclick="
+        calculation = '';
+        displayCalculation('');
+        // console.log(calculation);
+        ">C</button>
+
+      <button class="bottom" onclick="
+        calculation = calculation.slice(0, -1);
+        displayCalculation('');
+        // console.log(calculation);
+      ">⌫</button>
+
+      <button class="bottom operator" onclick="
+        calculation = '';
+        displayCalculation('');
+        // console.log(calculation);
+      ">Clear</button>
+    </p>
+  </div>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+
+    const result = document.querySelector('.js-result')
+
+    displayCalculation();
+
+    // Function for updating
+    function updateCalculator (value) {
+      calculation += value;
+      displayCalculation();
+    }
+
+    function displayCalculation () {
+      result.innerText = calculation;
+
+      localStorage.setItem('calculation', calculation);
+    }
+  </script>
+</body>
+</html>

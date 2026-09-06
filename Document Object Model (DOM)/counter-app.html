@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+  <p class="js-count">0</p>
+  <button class="js-plus-btn" onclick="
+    plusButton();
+  ">+</button>
+  <button class="js-minus-btn" onclick="
+    minusButton();
+  ">-</button>
+  <button class="js-reset-btn" onclick="
+    resetButton();
+  ">Reset</button>
+  
+  <script>
+    let count = 0;
+
+    const countElement = document.querySelector('.js-count');
+
+    // FUNCTION
+
+    // Plus function
+    function plusButton() {
+      count++;
+      countElement.innerText = count;
+    }
+
+    // Minus function
+    function minusButton() {
+      if (count < 1 ) {
+        count = 0
+      } else {
+        count--;
+        countElement.innerText = count;
+      }
+      
+    }
+
+    // Reset function
+    function resetButton() {
+      count = 0;
+      countElement.innerText = count;
+    }
+  </script>
+</body>
+</html>

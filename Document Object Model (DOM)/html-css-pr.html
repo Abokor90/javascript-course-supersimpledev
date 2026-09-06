@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+    .amazon-cart {
+      background-color: rgb(255, 216, 20);
+      padding: 8px 50px;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .uber-request {
+      background-color: black;
+      color: white;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .request-later {
+      background-color: rgb(230, 230, 230);
+      padding: 15px 25px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 10a -->
+  <h3>Amazon button</h3>
+  <button class="amazon-cart">Add to Cart</button>
+
+  <!-- 10b -->
+  <h3>Uber buttons</h3>
+  <button class="uber-request">Request now</button>
+  <button class="request-later">Schedule for later</button>
+
+  <br>
+
+  <!-- 10c -->
+   <button class="js-test-button js-button"
+    onclick="
+      testButton();
+    "
+   >Test</button>
+
+   <script>
+    const test = document.querySelector('.js-test-button');
+
+    function testButton () {
+      console.log(
+        test.classList.contains('js-button')
+      );
+    }
+
+
+   </script>
+</body>
+</html>

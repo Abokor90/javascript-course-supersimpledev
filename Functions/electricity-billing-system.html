@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Billing System</title>
+</head>
+<body>
+  
+  <script>
+    let customerName = 'John Doe';
+    let units = 400;
+
+    function calculateTotalBills(units) {
+      let total = 0;
+
+      if (units <= 100) {
+        total = units * 1.5;
+      } else if (units <= 200) {
+        total = (100 * 1.5) + ((units - 100) * 2)
+      } else {
+        total = (100 * 1.5) + (100 * 2) + ((units - 200) * 3);
+      }
+
+      return total
+    }
+
+    function calculateSurcharge(totalBills) {
+      if (totalBills > 400) {
+        return totalBills * 0.1
+      } else {
+        return 0;
+      }
+    }
+
+    function calculateDiscountAmount(totalBills, units) {
+      if (units < 50) {
+        return totalBills * 0.05;
+      } else {
+        return 0;
+      }
+    }
+
+    function calculateFinalBill(totalBills, surcharge, discountAmount) {
+      return totalBills + surcharge - discountAmount;
+    }
+
+    function getStatus(finalBill) {
+      if (finalBill > 500) {
+        return 'High usage';
+      } else {
+        return 'Normal usage';
+      }
+    }
+
+    let totalBills = calculateTotalBills(units);
+    let surcharge = calculateSurcharge(totalBills);
+    let discountAmount = calculateDiscountAmount(totalBills, units);
+    let finalBill = calculateFinalBill(totalBills, surcharge, discountAmount);
+    let status = getStatus(finalBill);
+
+    console.log(`Customer name: ${customerName}`);
+    console.log(`Total bill: ${totalBills}`);
+    console.log(`Total surcharge: ${surcharge}`);
+    console.log(`Total discount: ${discountAmount}`);
+    console.log(`Final bill: ${finalBill}`);
+    console.log(`Status: ${status}`);
+
+  </script>
+</body>
+</html>

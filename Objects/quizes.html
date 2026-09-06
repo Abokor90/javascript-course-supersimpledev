@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const calculator = {
+      num: 10,
+      add() {
+        this.num += 5;
+        return this.num;
+      },
+      subtract() {
+        this.num -= 3
+        return this.num;
+      },
+      reset() {
+        this.num = 10;
+        return this.num;
+      }
+    };
+
+    console.log(calculator.add());
+    console.log(calculator.subtract());
+    console.log(calculator.reset());
+  </script>
+</body>
+</html>

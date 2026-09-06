@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJECTS PROJECT - AMAZON</title>
+</head>
+<body>
+  
+  <script>
+     const product1 = {
+      name: 'basketball',
+      price: 2095,
+      ['delivery-time']: '3 days',
+
+     }
+     console.log(product1);
+     console.log(product1.name);
+     console.log(product1.price);
+
+    //  8b
+    product1.price += 500
+    console.log(product1.price);
+
+    // 8c
+    console.log(product1);
+
+    // 8d couldn't do this
+    const product2 = {
+      name: 'football',
+      price: 1000
+    }
+
+    function comparePrice(product1, product2) {
+      if (product1.price > product2.price) {
+        return product1;
+      } else {
+        return product2;
+      }
+    }
+    let result = comparePrice(product1, product2);
+
+    console.log(result);
+    console.log(result.name);
+  </script>
+</body>
+</html>

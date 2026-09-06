@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    let customerName = 'John Wick';
+    let units = 200;
+
+    function calculateTotalBill(units) {
+      let total = 0;
+
+      if (units <= 50) {
+        total = units * 1;
+      } else if (units <= 150) {
+        total = (50 * 1) + ((units - 50) * 2);
+      } else {
+        total = (50 * 1) + (100 * 2) + ((units - 150) * 4);
+      }
+      return total;
+    }
+
+    function calculateServiceCharge(total) {
+      if (total > 300) {
+        return 50;
+      } else {
+        return 20;
+      }
+    }
+
+    function calculateDiscountAmount(total, units) {
+      if (units < 40) {
+        return total * 0.1;
+      } else {
+        return 0;
+      }
+    }
+
+    function calculateFinalBill(total, serviceCharge, discountAmount) {
+      return total + serviceCharge - discountAmount;
+    }
+
+    function getStatus(finalBill) {
+      if (finalBill > 400) {
+        return 'High usage'
+      } else {
+        return 'Normal usage'
+      }
+    }
+
+    let total = calculateTotalBill(units);
+    let serviceCharge = calculateServiceCharge(total);
+    let discountAmount = calculateDiscountAmount(total, units);
+    let finalBill = calculateFinalBill(total, serviceCharge, discountAmount);
+    let status = getStatus(finalBill);
+
+    console.log(`Customer name: ${customerName}`);
+    console.log(`Total bill: ${total}`);
+    console.log(`Service charge: ${serviceCharge}`);
+    console.log(`Discount amount: ${discountAmount}`);
+    console.log(`Final bill: ${finalBill}`);
+    console.log(`Status: ${status}`);
+
+
+  </script>
+</body>
+</html>

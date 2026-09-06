@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="js-count">0</p>
+  <button onclick="
+    plusButton();
+  ">+</button>
+  <button onclick="
+    minusButton();
+  ">-</button>
+  <button onclick="
+    resetButton();
+  ">Reset</button>
+
+  <script>
+    let count = 0
+
+    const countElement = document.querySelector('.js-count');
+
+    function plusButton() {
+      count++;
+      countElement.innerText = count;
+    }
+
+    function minusButton() {
+      if (count < 1 ) {
+        count = 0;
+      } else {
+        count--;
+        countElement.innerText = count;
+      }
+    }
+
+    function resetButton() {
+      count = 0;
+      countElement.innerText = count;
+    }
+  </script>
+</body>
+</html>

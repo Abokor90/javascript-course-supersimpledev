@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input 
+    class="js-input"
+    type="text"
+    placeholder="Type something"
+    onkeydown="
+      countCharacters();
+    "
+  >
+
+  <p>Characters: 
+    <span class="js-count">0</span>
+  </p>
+
+
+  <script>
+    const input = document.querySelector('.js-input');
+    const count = document.querySelector('.js-count');
+
+    // function
+    function countCharacters() {
+      count.innerText = input.value.length;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+
+    .calculator {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 260px;
+    }
+
+    .display {
+      width: 100%;
+      height: 50px;
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input class="display" id="display" readonly />
+
+  <div class="buttons">
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button onclick="append(' / ')">/</button>
+
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+    <button onclick="append(' * ')">*</button>
+
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button onclick="append(' - ')">-</button>
+
+    <button onclick="append('0')">0</button>
+    <button onclick="append('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="append(' + ')">+</button>
+
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="backspace()">⌫</button>
+  </div>
+</div>
+
+<script>
+let expression = '';
+const display = document.getElementById('display');
+
+function updateDisplay() {
+  display.value = expression;
+}
+
+function append(value) {
+  expression += value;
+  updateDisplay();
+}
+
+function clearDisplay() {
+  expression = '';
+  updateDisplay();
+}
+
+function backspace() {
+  expression = expression.trimEnd();
+
+  if (expression.endsWith(' ')) {
+    expression = expression.slice(0, -3);
+  } else {
+    expression = expression.slice(0, -1);
+  }
+
+  updateDisplay();
+}
+
+function calculate() {
+  try {
+    let tokens = expression.split(' ');
+
+    // first pass: * and /
+    let newTokens = [];
+
+    for (let i = 0; i < tokens.length; i++) {
+      let t = tokens[i];
+
+      if (t === '*' || t === '/') {
+        let prev = parseFloat(newTokens.pop());
+        let next = parseFloat(tokens[++i]);
+
+        let result = t === '*' ? prev * next : prev / next;
+        newTokens.push(result.toString());
+      } else {
+        newTokens.push(t);
+      }
+    }
+
+    // second pass: + and -
+    let result = parseFloat(newTokens[0]);
+
+    for (let i = 1; i < newTokens.length; i += 2) {
+      let op = newTokens[i];
+      let num = parseFloat(newTokens[i + 1]);
+
+      if (op === '+') result += num;
+      else if (op === '-') result -= num;
+    }
+
+    expression = result.toString();
+    updateDisplay();
+  } catch (e) {
+    expression = 'Error';
+    updateDisplay();
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Control Panel</title>
+</head>
+<body>
+  <h1>Interactive Control Panel</h1>
+  <!-- SUBSCRIBE SECTION-->
+   <p class="js-para">Subscribe Button</p>
+   <button class="js-subscribe-button" onclick="
+      SubscribeButton();
+   ">Subscribe</button>
+
+   <!-- LIGHT ON/OFF TOGGLE SECTION -->
+    <p class="js-light">Light is OFF</p>
+    <button class="js-light-button" onclick="
+      lightButton();
+    ">Turn ON</button>
+
+<br>
+
+    <!-- PASSWORD SECTION -->
+     <input class="js-input" type="password" placeholder="Enter Password">
+     <button class="js-password-button" onclick="
+      passwordButton();
+     ">Show</button>
+
+     <!-- DARK MODE SECTION -->
+      <p class="js-mode-status">Light Mode Enabled</p>
+      <button class="js-mode-section" onclick="
+        darkModeSection();
+      ">Dark Mode</button>
+
+   <script>
+    // Subscribe Section
+    const subscribe = document.querySelector('.js-subscribe-button');
+    const lightParagraph = document.querySelector('.js-para');
+
+    // Light Section
+    const light = document.querySelector('.js-light-button');
+    const lightStatus = document.querySelector('.js-light');
+
+    // Password
+    const password = document.querySelector('.js-password-button');
+    const input = document.querySelector('.js-input');
+
+    // Dark Mode Section
+    const modeSection = document.querySelector('.js-mode-section');
+    const modeStatus = document.querySelector('.js-mode-status');
+
+    // STYLES SECTION
+
+    document.body.style.lineHeight = '2'
+
+    subscribe.style.borderRadius = '10px';
+    subscribe.style.padding = '10px 20px';
+    subscribe.style.fontSize = '16px';
+    subscribe.style.cursor = 'pointer';
+
+    light.style.borderRadius = '10px';
+    light.style.padding = '10px 20px';
+    light.style.fontSize = '16px';
+    light.style.cursor = 'pointer';
+
+    input.style.borderRadius = '10px';
+    input.style.padding = '10px 20px';
+    input.style.fontSize = '16px';
+    input.style.margin = '15px 5px 10px 10px';
+    
+
+    password.style.borderRadius = '10px';
+    password.style.padding = '10px 20px';
+    password.style.fontSize = '16px';
+    password.style.cursor = 'pointer';
+
+    modeSection.style.borderRadius = '10px';
+    modeSection.style.padding = '10px 20px';
+    modeSection.style.fontSize = '16px';
+    modeSection.style.cursor = 'pointer';
+
+
+
+    // SUBSCRIBE FUNCTION
+    function subscribeButton() {
+      if (subscribe.innerText === 'subscribe') {
+        subscribe.innerText = 'Subscribed';
+        lightParagraph.innerText = 'Subscribed Button';
+      } else {
+        subscribe.innerText = 'Subscribe';
+        lightParagraph.innerText = 'Subscribed Button';
+      }
+    }
+
+    // LIGHT SECTION
+    function lightButton() {
+      if (light.innerText === 'Turn ON') {
+        light.innerText = 'Turn OFF';
+        lightStatus.innerText = 'Light is ON';
+      } else {
+        light.innerText = 'Turn ON';
+        lightStatus.innerText = 'Light is OFF'
+      }
+    }
+
+    // Password function
+    function passwordButton() {
+      if (password.innerText === 'Hide') {
+        password.innerText = 'Show';
+        input.type = 'password';
+      } else {
+        password.innerText = 'Hide';
+        input.type = 'text'
+      }
+    }
+
+    // Dark Mode function
+    function darkModeSection() {
+      if (modeSection.innerText === 'Dark Mode') {
+        modeSection.innerText = 'Light Mode'
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        modeStatus.innerText = 'Dark Mode Enabled'
+      } else {
+        modeSection.innerText = 'Dark Mode'
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+        modeStatus.innerText = 'Light Mode Enabled';
+      }
+    }
+   </script>
+</body>
+</html>

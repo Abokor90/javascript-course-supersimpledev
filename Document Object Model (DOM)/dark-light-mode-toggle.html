@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mode Toggle</title>
+</head>
+<body>
+  <h1 class="js-dark-mode">Dark Mode Project</h1>
+  <button class="js-btn" onclick="
+    changeModeStatus();
+  ">Light Mode</button>
+
+  <script>
+    const modeToggle = document.querySelector('.js-dark-mode');
+
+    const toggleButton = document.querySelector('.js-btn');
+
+    function changeModeStatus() {
+      if (toggleButton.innerText === 'Light mode') {
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        toggleButton.innerText = 'Dark Mode';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+        toggleButton.innerText = 'Light mode'
+      }
+    }
+  </script>
+
+</body>
+</html>

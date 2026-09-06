@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays & Loops</title>
+</head>
+<body>
+  
+  <script>
+    // ARRAYS
+    /*
+    const myArray = [10, 20, 30];
+    console.log(myArray);
+
+    console.log(myArray[0]);
+    myArray[1] = 99;
+    console.log(myArray);
+
+    const arrays = [1, 'hello', true, {name: 'socks'}, [1, 2]];
+    console.log(arrays[4, 1]);
+
+    console.log(typeof [1, 2 ]);
+
+    console.log(Array.isArray([1, 2]))
+
+    // PROPERTIES & METHODS 
+    //  .length - will tell us how many values are in the array
+    console.log(myArray.length);
+    console.log(myArray.length);
+
+    // .push - Adds a value to the end of the array
+    myArray.push(100);
+    console.log(myArray);
+
+    // .splice - removes a value from an array 
+    myArray.splice(0, 1);
+    console.log(myArray);
+*/
+
+   /*
+    // LOOPS - let us run code over and over
+    // while loop - used to run a block of code repeatedly while a condition is true
+    let i = 1;
+
+    while (i <= 5) {
+      console.log(i);
+      i = i + 1;
+      // i += 1;
+      // i++;
+    }
+   */
+
+   /*
+    // for loop
+    for (let i = 1; i <= 5; i++) {
+      console.log(i);
+    }
+    */
+
+
+    /*
+    const todoList = [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ];
+
+     for (let index = 0; index <= todoList.length - 1; index++) {
+      const value = todoList[index]
+      console.log(value);
+     }
+
+    //  shortcut for the for loop above
+    for (let i = 0; i < todoList.length; i++) {
+      const value = todoList[i];
+      console.log(value);
+    }
+      */
+
+    /*
+      // Accumulator pattern - Technique that we can combine with looping through an array
+      const nums = [1, 1, 3];
+      let total = 0;   // accumulator variable
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        total += num;
+      }
+
+      console.log(total);
+
+      const numsDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numsDoubled.push(num * 2);
+      }
+      console.log(numsDoubled);
+
+ 
+      // Example 2
+      const numbers = [10, 20, 30, 40];
+      let sum = 0;
+
+      for (let i = 0; i < numbers.length; i++) {
+        const nums = numbers[i];
+        sum += nums;
+      }
+    
+      console.log(sum);
+      */
+
+      // Arrays are references
+      const array1 = [1, 2, 3];
+      const array2 = array1.slice();
+      
+      console.log(array1);
+      console.log(array2);
+
+      array2.push(4);
+
+      console.log(array1);
+      console.log(array2);
+
+
+      // Destructuring
+      const [firstVlaue, secondValue, thirdValue] = [1, 2, 3];
+      console.log(firstVlaue);
+      console.log(secondValue);
+      console.log(thirdValue);
+
+
+      // MORE DETAILS ABOUT LOOPS
+          // Break - let us exit a loop early
+          // continue - let us skip one iteration of the loop or one run of the loop
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+      }
+
+
+      let i = 1;
+
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+      
+      function doubleArray(nums) {
+        const numsDoubled = [];
+
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (nums === 0) {
+            return numsDoubled
+          }
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled
+      }
+      console.log(doubleArray([1, 1, 3, 0, 4]));
+      console.log(doubleArray([2, 2, 5, 0, 5]));
+      
+  </script>
+</body>
+</html>

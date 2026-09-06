@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const product1 = {
+      name: 'basketball',
+      price: 2095,
+      ['delivery-time']: '3 days'
+    }
+
+    console.log(product1);
+    console.log(product1.name);   // dot notation
+    console.log(product1['name']);   // bracket notation
+    console.log(product1.price);    // dot notation
+    console.log(product1['price']); // bracket notation
+
+    // 8b
+    product1.price += 500;
+    console.log(product1.price);
+
+    // 8c
+    console.log(product1['delivery-time']);
+
+    // 8d
+    const product2 = {
+      name: 'basketball',
+      price: 2595
+    }
+
+    function comparePrice(product1, product2) {
+      if (product1.price > product2.price) {
+        return product1;
+      } else {
+        return product2;
+      }
+    }
+
+    let result = comparePrice(product1, product2);
+
+    console.log(result);
+    console.log(result.name);
+
+    // 8e
+    function isSameProduct (product1, product2) {
+      if (product1.name === product2.name &&
+          product1.price === product2.price
+      ) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    let result2 = isSameProduct(product1, product2);
+    console.log(result2);
+
+    // 8f
+    let name = 'Abdi';
+    let results = name.toLowerCase();
+    console.log(results);
+
+    // 8g
+    let text = 'Hello';
+    let answer = text.repeat(3);
+    console.log(answer);
+  </script>
+</body>
+</html>

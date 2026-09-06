@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Name Preview</title>
+</head>
+<body>
+  <input 
+    class="js-input"
+    type="text"
+    placeholder="Your Name"
+    onkeydown="
+      handleKeyDown(event);
+    "
+  >
+
+  <p>Name:
+    <span class="js-name">Ali</span>
+  </p>
+
+  <script>
+    const input = document.querySelector('.js-input');
+    const namesContainer = document.querySelector('.js-name');
+
+     function handleKeyDown(event) {
+
+      if (event.key === 'Enter') {
+
+        updateName();
+      }
+    }
+''
+    function updateName () {
+      // name.innerText = input.value;
+      const name = input.value;
+
+      namesContainer.innerHTML += `
+        <p>${name}</p>
+      `;
+
+      input.value = '';
+    }
+
+  
+  </script>
+</body>
+</html>

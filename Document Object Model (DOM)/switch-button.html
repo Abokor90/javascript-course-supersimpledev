@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Button</title>
+  
+  <style>
+    .js-gaming-button, 
+    .js-music-button, 
+    .js-tech-button {
+      padding: 10px 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .is-toggled {
+      background-color: black;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+   <button class="js-gaming-button"
+   onclick="
+    toggleGame();
+   "  
+   >Gaming</button>
+
+   <button class="js-music-button"
+   onclick="
+    toggleMusic();
+   "  
+   >Music</button>
+
+   <button class="js-tech-button"
+   onclick="
+    toggleTech();
+   "  
+   >Tech</button>
+
+
+   <script>
+    const gamingButton = document.querySelector('.js-gaming-button');
+    const musicButton = document.querySelector('.js-music-button');
+    const techButton = document.querySelector('.js-tech-button');
+
+    function turnOffPreviousButton () {
+      gamingButton.classList.remove('is-toggled');
+      musicButton.classList.remove('is-toggled');
+      techButton.classList.remove('is-toggled');
+    }
+
+    function toggleGame() {
+      turnOffPreviousButton();
+
+      gamingButton.classList.add('is-toggled');
+      // if (gamingButton.classList.contains('is-toggled')) {
+      //   gamingButton.classList.remove('is-toggled');
+      // } else {
+      //   gamingButton.classList.add('is-toggled');
+      // }
+    }
+
+    function toggleMusic () {
+      turnOffPreviousButton();
+
+      musicButton.classList.add('is-toggled')
+      // if (musicButton.classList.contains('is-toggled')) {
+      //   musicButton.classList.remove('is-toggled');
+      // } else {
+      //   musicButton.classList.add('is-toggled')
+      // }
+    }
+
+    function toggleTech () {
+      turnOffPreviousButton();
+
+      techButton.classList.add('is-toggled');
+
+      // if (techButton.classList.contains('is-toggled')) {
+      //   techButton.classList.remove('is-toggled');
+      // } else {
+      //   techButton.classList.add('is-toggled');
+      // }
+    }
+   </script>
+</body>
+</html>

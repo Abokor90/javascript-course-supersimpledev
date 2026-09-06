@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inheritance</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    class Clothing {
+      constructor(name, price) {
+        this.name;
+        this.price;
+      }
+    }
+
+    class Shirt extends Clothing {
+      constructor(name, price, size) {
+        super(name, price);
+
+        this.size = size;
+      }
+    }
+
+    const shirt = new Shirt('T-Shirt', 1000, 'Large');
+    console.log(shirt);
+
+
+    // Example 2
+    class Animal {
+      makeSound() {
+        console.log('Some animal sound');
+      }
+    }
+    makeSound();
+
+    class Dog extends Animal {
+      makeSound() {
+        console.log('Woof!');
+      }
+    }
+
+    makeSound();
+   */
+
+    // Example 3
+    class Vehicle {
+      constructor(brand, speed){
+        this.brand = brand;
+        this.speed = speed;
+      }
+
+      displayInfo() {
+        console.log('Brand new tuxedo car');
+      }
+    }
+
+    class Car extends Vehicle {
+      constructor(brand, speed, doors) {
+        super(brand, speed);
+
+        this.doors = doors;
+      }
+
+      displayInfo() {
+        console.log('Brand new BMW car');
+      }
+    }
+
+    const car = new Car('BMW', 250, 4);
+    car.displayInfo();
+  </script>
+</body>
+</html>

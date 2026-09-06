@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="js-light">Light is off</p>
+  <button class="js-light-off-on" onclick="
+    lightOffOn();
+  ">Turn ON</button>
+  
+  <script>
+    function lightOffOn() {
+      const switchOffOn = document.querySelector('.js-light-off-on');
+
+      const lightText = document.querySelector('.js-light');
+
+      if (switchOffOn.innerText === 'Turn ON') {
+        switchOffOn.innerText = 'Turn OFF';
+        lightText.innerText = '✨ Light is on';
+      } else {
+        switchOffOn.innerText = 'Turn ON';
+        lightText.innerText = '💡Light is OFF';
+      }
+    }
+  </script>
+</body>
+</html>

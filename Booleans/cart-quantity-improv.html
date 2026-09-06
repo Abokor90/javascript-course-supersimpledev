@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart Quantity</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    #message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Shopping Cart</h2>
+
+  <p>Cart Quantity: <span id="cartValue">0</span></p>
+
+  <button onclick="
+    cartQuantity += 1;
+
+    if (cartQuantity > 10) {
+      cartQuantity = 10;
+      document.getElementById('message').innerText = 'Cart is full';
+    }
+
+    document.getElementById('cartValue').innerText = cartQuantity;
+  ">Add to cart</button>
+
+  <button onclick="
+    cartQuantity += 2;
+
+    if (cartQuantity > 10) {
+      cartQuantity = 10;
+      document.getElementById('message').innerText = 'Cart is full';
+    }
+
+    document.getElementById('cartValue').innerText = cartQuantity;
+  ">+2</button>
+
+  <button onclick="
+    cartQuantity += 3;
+
+    if (cartQuantity > 10) {
+      cartQuantity = 10;
+      document.getElementById('message').innerText = 'Cart is full';
+    }
+
+    document.getElementById('cartValue').innerText = cartQuantity;
+  ">+3</button>
+
+  <br><br>
+
+  <button onclick="
+    cartQuantity -= 1;
+
+    if (cartQuantity < 0) {
+      cartQuantity = 0;
+      document.getElementById('message').innerText = 'Not enough items in cart';
+    }
+
+    document.getElementById('cartValue').innerText = cartQuantity;
+  ">Remove</button>
+
+  <button onclick="
+    cartQuantity = 0;
+    document.getElementById('cartValue').innerText = cartQuantity;
+    document.getElementById('message').innerText = 'Cart reset';
+  ">Reset</button>
+
+  <p id="message"></p>
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+
+</body>
+</html>

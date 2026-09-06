@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <button class="js-show-quantity" onclick="
+    updateCart(0);
+    console.log(`cart quantity: ${cartQuantity}`);
+   ">Show Quantity</button>
+  <button class="js-add-to-cart" onclick="
+    // cartQuantity += 1;
+    updateCart(1);
+    console.log(`cart quantity: ${cartQuantity}`);
+  ">Add to cart</button>
+
+  <button class="js-add-two" onclick="
+    updateCart(2)
+    console.log(`cart quantity: ${cartQuantity}`);
+  ">+2</button>
+
+  <button class="js-add-to-three" onclick="
+    updateCart(3);
+    console.log(`Cart quantity: ${cartQuantity}`);
+    ">+3</button>
+
+    <button class="js-add-to-four" onclick="
+     updateCart(4);
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">+4</button>
+
+    <button class="js-add-to-five" onclick="
+     updateCart(5);
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">+5</button>
+
+    <button class="js-remove-from-cart" onclick="
+     updateCart(-1);     
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">Remove from cart</button>
+
+    <button class="js-remove-two" onclick="
+     updateCart(-2);
+     console.log(`Cart quantity: ${cartQuantity}`);
+    ">-2</button>
+
+    <button class="js-remove-three" onclick="
+     updateCart(-3);
+     console.log(`Cart quantity: ${cartQuantity}`); 
+    ">-3</button>
+
+  <button class="js-reset-cart" onclick="
+   resetCart();
+    console.log('Cart was reset.');
+    console.log(`Cart quantity: ${cartQuantity}`);
+  ">Reset cart</button>
+
+  <p>Cart quantity:
+    <span  class="js-cart-quantity">0</span>
+  </p>
+
+  <script>
+    let cartQuantity = 0;    
+
+    const quantity = document.querySelector('.js-cart-quantity');
+
+    //Function for Updating 
+    function updateCart (value) {
+      cartQuantity += value;
+      quantity.innerText = cartQuantity;
+    }
+
+    // Reset Function
+    function resetCart () {
+      cartQuantity = 0;
+      quantity.innerText = cartQuantity;
+    }
+
+    // display when page loads
+    quantity.innerText = cartQuantity;
+
+  </script>
+</body>
+</html>

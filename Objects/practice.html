@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object practice</title>
+</head>
+<body>
+  
+  <script>
+    let person = {
+      name: 'John',
+      age: 25
+    };
+
+    // ACCESSING VALUES
+    // dot notation
+    console.log(person.name);
+    console.log(person.age);
+
+    // Bracket notation
+    console.log(person['name']);
+    console.log(person['age']);
+
+    const persons = { name: 'John', age: 25 };
+
+    let key = 'name';
+
+    console.log(persons.key); // ❌ undefined because person.key, is looking for a property literally called 'key',  not the value inside the valriable 
+    console.log(persons[key]); // this will now give us the value inside the name 'John'
+    console.log(persons['name']); // we use quotes because 'name' is a string. Without quotes, JS would treat it as a variable
+    // console.log(person);
+
+    // UPDATING A VALUE
+    persons.age = 30;  // this updates the value of the age from 25 to 30
+    console.log(persons);   // logs value 30 to the console
+
+    // ADDING NEW PROPERTIES
+    persons.country = 'England';
+    persons.city = 'Manchester';
+    console.log(persons);
+    console.log(persons);
+
+    console.log(persons);  // this displays the all properties in the objects 'persons' 
+
+    // DELETING PROPERTIES
+    console.log(delete persons['age']);
+    console.log(delete persons.age);    // both of this works, one is dot notation and the other is bracket notation
+    console.log(persons);
+
+    // NESTED OBJECTS
+    const user = {
+      name: 'Sam',
+      address: {
+        city: 'Nairobi'
+      }
+    };
+
+    console.log(user.address); // the result will be in objects
+    console.log(user.address.city); // the result will be the name of the city and it is in dot notation form
+    console.log(user['address']);  // bracket notation and will give us the result as an object
+
+    // FUNCTIONS IN OBJECTS(METHODS) your can also remove the function
+    const car = {
+      start: function () {
+        console.log('Car started');
+      }
+    };
+
+    car.start();
+
+    const people = {
+      name: 'John',
+      sayHello: function () {
+        console.log('Hello!: dude');
+      }
+    };
+
+    people.sayHello();      // dot notation
+    people['sayHello']();   // bracket notation
+
+    // OBJECT KEYS & VALUES
+   console.log(Object.keys(persons));
+   console.log(Object.values(persons));
+
+   
+  </script>
+</body>
+</html>

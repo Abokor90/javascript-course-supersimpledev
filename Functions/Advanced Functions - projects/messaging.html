@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title class="js-title">Messaging App</title>
+</head>
+<body>
+  <button onclick="addMessage();">Add</button>
+  <button onclick="removeMessage()">Remove</button>
+  <script>
+    // 12h: Initialize the messages count
+    let messages = 2;
+
+    // Flag to toggle between 'app' and the notification message
+    let isNotificationShowing = false;
+
+    // 12g - Use setInterval to change the title every 1 second
+    setInterval(function() {
+      // 12i - if there is no messages, keep the title as 'app' and do nothing else
+      if (messages <= 0) {
+        document.title = 'app';
+        return;
+      }
+
+      // Toggle the title back and forth
+      if (isNotificationShowing) {
+        document.title = 'app';
+        isNotificationShowing = false;
+      } else {
+        isNotificationShowing = true;
+      }
+    }, 1000)
+
+    // 12h & 12i - Function to decrement messages (preventing it from going below 0)
+    function removeMessage() {
+      if (messages > 0) {
+        messages--;
+      }
+    }
+  </script>
+</body>
+</html>

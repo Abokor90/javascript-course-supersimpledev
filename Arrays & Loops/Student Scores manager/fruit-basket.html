@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops - Fruit Basket</title>
+</head>
+<body>
+  
+  <script>
+    const fruits = ['apple', 'banana', 'mango', 'orange'];
+
+    function getFirstFruit(fruits) {
+      return fruits[0]
+    }
+
+    console.log(getFirstFruit(fruits));
+
+    function getLastFruit(fruits) {
+      return fruits[fruits.length - 1];
+    }
+
+    console.log(getLastFruit(fruits));
+
+    function countFruits() {
+      return fruits.length;
+    }
+
+    console.log(countFruits(fruits));
+
+
+    function printFruits(fruits) {
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+      }
+    }
+
+    printFruits(fruits);
+
+    function addFruit(fruits, fruitName) {
+      fruits.push(fruitName);
+      return fruitName
+    }
+
+    console.log(addFruit(fruits, 'grape'));
+  </script>
+</body>
+</html>

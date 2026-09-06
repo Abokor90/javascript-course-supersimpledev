@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const scores = [75, 82, 90, 68, 95];
+
+    function getFirstScore(scores) {
+      return scores[0];
+    }
+
+    console.log(getFirstScore(scores));
+
+    function getHighestScore(scores) {
+      let highest = scores[0];
+
+      for (i = 0; i < scores.length; i++) {
+        if (scores[i] > highest) {
+          highest = scores[i];
+        }
+      }
+
+      return highest;
+    }
+
+    console.log(getHighestScore([75, 82, 90, 68, 95]));
+
+    function addBonus(scores, bonus) {
+      const newScore = [];
+
+      for (i = 0; i < scores.length; i++) {
+        newScore.push(scores[i] + bonus)
+      }
+
+      return newScore;
+    }
+
+    console.log(addBonus([75, 82, 90], 5));
+
+    // Swap first and last score
+    function swapScore(scores) {
+      const firstValue = scores[0];
+      const lastIndex = scores.length - 1;
+
+      scores[0] = scores[lastIndex];
+      scores[lastIndex] = firstValue;
+
+      return scores
+    }
+
+    console.log(swapScore([75, 82, 90, 68, 95]));
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button class="js-9a">9a</button>
+
+  <button class="js-9b">9b</button>
+
+  <button class="js-heads" onclick="
+    buttonStatus('heads');
+  ">heads</button>
+
+  <button class="js-tails" onclick="
+    buttonStatus('tails');
+  ">tails</button>
+
+  <p class="js-button-status">You chose: heads</p>
+
+  <script>
+    // 9a
+    const buttonA = document.querySelector('.js-9a');
+    console.log(buttonA);
+
+    const buttonB = document.querySelector('.js-9b');
+    buttonB.innerHTML = '9b done!'
+
+    // 9c
+    const headsButton = document.querySelector('.js-heads');
+    const tailsButton = document.querySelector('.js-tails');
+    const status = document.querySelector('.js-button-status');
+
+    function buttonStatus(choice) {
+        if (headsButton.innerHTML === 'heads') {
+        status.innerHTML = `You chose: ${choice}`;
+      } else if (tailsButton.innerHTML === 'tails') {
+        status.innerHTML = `You chose: ${choice}`;
+      }
+    }
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <button class="js-button">Click</button>
+  
+  <script>
+    /*
+    const buttonElement = document.querySelector('.js-button');
+
+    const eventListener = () => {
+      console.log('Click');
+    }
+    buttonElement.addEventListener('click', eventListener);
+
+    buttonElement.removeEventListener('click', eventListener);
+
+    buttonElement.addEventListener('click', () => {
+      console.log('Click2');
+    });
+    */
+
+
+    /*
+    function greeting() {
+      console.log('hello');
+    }
+    greeting();
+
+    const num = 2;
+    const function1 = function() {
+      console.log('hello2');
+    };
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    const object1 = {
+      num: 2,
+      fun: function greeting() {
+        console.log('hello3');
+      }
+    };
+    object1.fun();
+
+
+
+    function display(param) {
+      console.log(param);
+    }
+    display(2);  // this is called - passing a value into a function
+    display(3);
+    */
+
+    /*
+    // Features of JavaScript
+    //1. setTimeout() - Allows us to run a function in the future
+    setTimeout(function() {
+      console.log('timeout');        // Asynchronous Code - will not wait for one line to finish before going to the next line
+      console.log('timeout2');      // synchronous Code - will wait for one line to finish before going to the next line
+    }, 3000)
+    console.log('next line');
+
+    // 2. setInterval - it will keep running a function in the future
+    setInterval(function() {
+      console.log('Interval');
+    }, 3000)
+    console.log('next line 2');
+    */
+
+
+    /*
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach((value, index) => {
+      if (value === 'wash dishes') {
+        return;
+      }
+      console.log(index);
+      console.log(value);
+    });
+
+
+
+    const regularFunction = function(param, param2) {
+      console.log('hello');
+      return 5;
+    }
+    regularFunction();
+
+
+    // Arrow Function
+    const arrowFunction = (param, param2) => {
+      console.log('hello');
+      return 5;
+    };
+    arrowFunction();
+
+    const oneParam = param => {
+      console.log(param + 1);
+    };
+    oneParam(2);
+    oneParam(5);
+
+
+    const oneLine = () => 2 + 3; 
+    console.log(oneLine());
+
+    // Arrow function inside an object
+    const object2 = {
+      method: () => {
+
+      },
+      method() {}
+    }
+      */
+
+
+      // MORE FEATURES THAT USE FUNCTIONS AS VALUES
+      // 2 more Array Methods
+      // FILTER
+      console.log([1, -3, 5].filter((value, index) => {
+        // if (value >= 0) {
+        //   return true;
+        // } else {
+        //   return false;
+        // }
+
+        return value >= 0;   // shortcuts for the above if statement
+      }));
+
+      // MAP - transform an array into another array
+      console.log([1, 1, 3].map((value, index) => {
+        return value * 2;
+      }));
+
+      console.log([1, 1, 3].map(value =>  value * 2));
+
+      // Closure - if a function has access to a value, it will always have access to that value
+  </script>
+</body>
+</html>

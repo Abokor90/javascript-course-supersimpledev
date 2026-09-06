@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Creating multiple objects using a function</title>
+</head>
+<body>
+
+  <script>
+
+    function createProduct(name, price) {
+      return {
+        name: name,
+        price: price
+      };
+    }
+
+    const laptop = createProduct('Laptop', 50000);
+    const phone = createProduct('Phone', 30000)
+
+    console.log(laptop);
+    console.log(phone);
+  </script>
+</body>
+</html>

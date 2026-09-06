@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const library = {
+      name: 'City Library',
+      books: 15,
+      history: [],
+
+      borrowBook(amount) {
+        if (amount <= 0) {
+          // this.books = amount;
+          return 'Invalid amount'
+        } else if (amount > this.books) {
+          return "Not enough books available";
+        } else  {
+          this.books -= amount;
+          this.history.push(`Borrwed ${amount} books`)
+          return this.books;
+        }
+      },
+
+      returnBook(amount) {
+        if (amount <= 0) {
+          return 'Invalid amount';
+        } else {
+          this.books += amount;
+          this.history.push(`Returned ${amount} books`)
+          return this.books;
+        }
+      },
+
+      checkBooks() {
+        return this.books;
+      },
+
+      viewHistory() {
+        return this.history;
+      },
+
+      resetLibrary() {
+        this.books = 5;
+        this.history = []
+        return this.books;
+      }
+    };
+
+    console.log(library.borrowBook(8));
+    console.log(library.returnBook(5));
+    console.log(library.checkBooks());
+    console.log(library.resetLibrary());
+  </script>
+</body>
+</html>

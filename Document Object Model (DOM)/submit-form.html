@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Form</title>
+</head>
+<body>
+  <input class="js-input-form" type="text" placeholder="Your name"
+    onkeydown="
+      handleKeyDown(event);
+    "
+  >
+  <button onclick="
+    submitForm();
+  ">Submit</button>
+  <p class="js-result"></p>
+
+  <script>
+    const inputElement = document.querySelector('.js-input-form');
+    const result = document.querySelector('.js-result')
+    // const buttonElemnt = document.querySelector('.js-button-form');
+
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        submitForm();
+      }
+    }
+
+    function submitForm() {
+      result.innerHTML = `Your name is: ${inputElement.value}`;
+    }
+  </script>
+</body>
+</html>
