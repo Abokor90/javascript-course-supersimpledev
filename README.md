@@ -10,6 +10,7 @@ This repository contains the code, exercises, and projects I have completed whil
 * Arrays & Loops
 * Objects
 * DOM (Document Object Model)
+* Object Oriented Programming
 
 ## 📁 Projects
 
