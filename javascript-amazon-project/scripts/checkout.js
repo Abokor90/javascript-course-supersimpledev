@@ -7,6 +7,6 @@ import { loadProduct } from "../data/products.js";
 loadProduct(() => {
   renderOrderSummary();
   renderPaymentSummary();
-});
+})
 
 
