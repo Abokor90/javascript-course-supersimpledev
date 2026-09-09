@@ -21,7 +21,7 @@ Promise.all([
   console.log(values);
   renderOrderSummary();
   renderPaymentSummary();
-})
+});
 
 /*
 new Promise((resolve) => {
